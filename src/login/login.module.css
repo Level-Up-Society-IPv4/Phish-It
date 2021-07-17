@@ -1,0 +1,196 @@
+/* Login Scrap page */
+
+#homepage{
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+
+    background: #126BB7;
+}
+
+/* Rectangle 2 */
+
+#skybluebackground{
+    position: absolute;
+    width: 466px;
+    height: 745px;
+    left: 487px;
+    top: 139px;
+
+    background: #1E96FC;
+    border-radius: 20px;
+}
+
+/* Login */
+
+#logintitle{
+    position: absolute;
+    width: 158px;
+    height: 86px;
+    left: 642px;
+    top: 169px;
+
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 55px;
+    line-height: 71px;
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Rectangle 4 */
+
+#textbox1{
+    position: absolute;
+    width: 390px;
+    height: 55px;
+    left: 525px;
+    top: 341px;
+
+    background: #F3F3F3;
+}
+
+/* Email */
+
+#email{
+    position: absolute;
+    width: 191px;
+    height: 36px;
+    left: 535px;
+    top: 287px;
+
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 44px;
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Rectangle 5 */
+
+#textbox2{
+    position: absolute;
+    width: 390px;
+    height: 55px;
+    left: 525px;
+    top: 503px;
+
+    background: #F3F3F3;
+}
+
+/* Password */
+
+#password{
+    position: absolute;
+    width: 191px;
+    height: 36px;
+    left: 525px;
+    top: 449px;
+
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 44px;
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Rectangle 6 */
+
+#yellowrect1{
+    position: absolute;
+    width: 390px;
+    height: 55px;
+    left: 525px;
+    top: 773px;
+
+    background: #FDC500;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* No Account? */
+
+#noaccount{
+    position: absolute;
+    width: 363px;
+    height: 36px;
+    left: 529px;
+    top: 722px;
+
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 44px;
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Create Company Account */
+
+#companyaccount{
+    position: absolute;
+    width: 380px;
+    height: 48px;
+    left: 544px;
+    top: 780px;
+
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 31px;
+    line-height: 40px;
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Rectangle 7 */
+
+#yellowrect2{
+    position: absolute;
+    width: 122px;
+    height: 55px;
+    left: 658px;
+    top: 603px;
+
+    background: #FDC500;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Login */
+
+#login{
+    position: absolute;
+    width: 85px;
+    height: 54px;
+    left: 677px;
+    top: 610px;
+
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 31px;
+    line-height: 40px;
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
