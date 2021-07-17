@@ -1,4 +1,3 @@
-import logo from './assets/Phisher-logo.png';
 import styles from './Home.module.css';
 import { Link } from 'react-router-dom';
 export const Home = () => (
