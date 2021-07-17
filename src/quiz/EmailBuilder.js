@@ -2,20 +2,29 @@ import styles from './EmailBuilder.module.css';
 import { useState } from 'react';
 import man from './assets/man.png';
 import { Select } from './components/Select';
-import { FROM_OPTIONS, getMessage, getSubjectOptions } from './options';
+import { FROM_OPTIONS, getEmailStartOptions, getEmailEndOptions, getGreetingOptions, getMessage, getSignOff, getSubjectOptions } from './options';
 
 export const EmailBuilder = ({ finishQuiz }) => {
   const [from, setFrom] = useState(null);
   const [subject, setSubject] = useState(null);
+  const [greeting, setGreeting] = useState(null);
+  const [emailStart, setEmailStart] = useState(null);
+  const [emailEnd, setEmailEnd] = useState(null);
 
   const clear = () => {
     setFrom(null);
     setSubject(null);
+    setGreeting(null);
+    setEmailStart(null);
+    setEmailEnd(null);
   };
 
-  const points = subject?.points + from?.points;
+  const points = subject?.points + from?.points + greeting?.points + emailStart?.points + emailEnd?.points;
   const showSubject = from !== null;
-  const complete = subject !== null;
+  const showGreeting = subject !== null;
+  const showEmailStart = greeting !== null;
+  const showEmailEnd = emailStart !== null;
+  const complete = emailEnd !== null;
 
   return (
     <>
@@ -65,6 +74,61 @@ export const EmailBuilder = ({ finishQuiz }) => {
             )
           }
         </div>
+        <div className={styles.labelGroup}>
+          <div className={styles.label}>
+            <p className={styles.labelText}>Body:</p>
+          </div>
+        </div>
+        {
+          showGreeting && (
+            greeting ? (
+              <p className={styles.emailText}>{greeting.text}</p>
+            ) : (
+              <div className={styles.labelGroup}>
+                <Select
+                  options={getGreetingOptions(from.id)}
+                  nextCallback={setGreeting}
+                />
+              </div>
+            )
+          )
+        }
+        <p className={styles.emailText}>
+          {
+            showEmailStart && (
+              emailStart ? (
+                emailStart.text
+              ) : (
+                <div className={styles.labelGroup}>
+                  <Select
+                    options={getEmailStartOptions(from.id)}
+                    nextCallback={setEmailStart}
+                  />
+                </div>
+              )
+            )
+          }
+          {' '}
+          {
+            showEmailEnd && (
+              emailEnd ? (
+                emailEnd.text
+              ) : (
+                <div className={styles.labelGroup}>
+                  <Select
+                    options={getEmailEndOptions(from.id)}
+                    nextCallback={setEmailEnd}
+                  />
+                </div>
+              )
+            )
+          }
+        </p>
+        {
+          complete && (
+            <p className={styles.emailText}>{getSignOff(from.id)}</p>
+          )
+        }
       </div>
       {
         complete ? (

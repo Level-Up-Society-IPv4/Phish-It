@@ -69,17 +69,123 @@ export const getSubjectOptions = (fromOptionId) => {
   }
 }
 
+export const getGreetingOptions = (fromOptionId) => {
+  if (fromOptionId === 'itsupport') {
+    return [
+      {
+        id: 'hijohn',
+        text: 'Hi John,',
+        points: 50,
+        description: 'Good choice! Addressing John by name gains his trust and makes this message seem more important.'
+      },
+      {
+        id: 'user',
+        text: 'Valued user,',
+        points: 0,
+        description: 'This greeting is too impersonal. John will trust you more if you address him by name!'
+      }
+    ];
+  } else {
+    return [
+      {
+        id: 'john',
+        text: 'John,',
+        points: 50,
+        description: 'Good choice! Addressing John by name gains his trust and makes this message seem more important.'
+      },
+      {
+        id: 'user',
+        text: 'Hello,',
+        points: 0,
+        description: 'This greeting is too impersonal. John will trust you more if you address him by name!'
+      }
+    ];
+  }
+}
+
+export const getEmailStartOptions = (fromOptionId) => {
+  if (fromOptionId === 'itsupport') {
+    return [
+      {
+        id: 'todo1',
+        text: 'TODO: A good first sentence from IT support.',
+        points: 100,
+        description: 'TODO: Good choice!'
+      },
+      {
+        id: 'todo2',
+        text: 'TODO: A bad first sentence from IT support.',
+        points: 0,
+        description: 'TODO: Not so good choice.'
+      }
+    ];
+  } else {
+    return [
+      {
+        id: 'todo3',
+        text: 'TODO: A good first sentence.',
+        points: 100,
+        description: 'TODO: Good choice!'
+      },
+      {
+        id: 'todo4',
+        text: 'TODO: A bad first sentence.',
+        points: 0,
+        description: 'TODO: Not so good choice.'
+      }
+    ];
+  }
+}
+
+export const getEmailEndOptions = (fromOptionId) => {
+  if (fromOptionId === 'itsupport') {
+    return [
+      {
+        id: 'todo5',
+        text: 'TODO: A bad second sentence from IT support.',
+        points: 0,
+        description: 'TODO: Not so good choice.'
+      },
+      {
+        id: 'todo6',
+        text: 'TODO: A good second sentence from IT support.',
+        points: 50,
+        description: 'TODO: Good choice!'
+      }
+    ];
+  } else {
+    return [
+      {
+        id: 'todo7',
+        text: 'TODO: A bad second sentence.',
+        points: 0,
+        description: 'TODO: Not so good choice.'
+      },
+      {
+        id: 'todo8',
+        text: 'TODO: A good second sentence.',
+        points: 50,
+        description: 'TODO: Good choice!'
+      }
+    ];
+  }
+}
+
+export const getSignOff = (fromOptionId) => {
+  return fromOptionId === 'itsupport' ? 'Google' : 'Mary';
+}
+
 export const getMessage = (score) => {
-  if (score === 200) {
+  if (score === 400) {
     return "John had no idea what hit him! Your phishing skills blew him right out of the water. "
       + "He didn't even know he was tricked until his boss asked him about the leaked documents."
-  } else if (score >= 150) {
+  } else if (score >= 300) {
     return 'John fell right into your trap! He sent you his password, then realized his mistake. '
       + 'He scrambled, but it was too late!';
-  } else if (score >= 100) {
+  } else if (score >= 200) {
     return 'John thought something was off about this email, but he was too busy to worry about it. '
       + "He didn't want to waste any time figuring it out, so he sent you his password!"
-  } else if (score >= 50) {
+  } else if (score >= 100) {
     return 'At first John believed you, but then he took a closer look. '
       + 'Something tipped him off about this email, so he deleted it and never responded.';
   } else {
