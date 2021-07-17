@@ -9,7 +9,7 @@ export const Home = () => (
     </Link>
     </div>
     <div className={styles.homepageBody}>
-      <h1 className={styles.homepageTitle}>PhishMe!</h1>
+      <h1 className={styles.homepageTitle}>Phish Me!</h1>
     </div>
   </div>
 );

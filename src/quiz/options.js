@@ -112,71 +112,78 @@ export const getEmailStartOptions = (fromOptionId) => {
   if (fromOptionId === 'itsupport') {
     return [
       {
-        id: 'account-accessed',
-        text: 'Your Gmail account was recently accessed in Sudbury, Ontario.'
+        id: 'account-accessed1',
+        text: 'Your Gmail account was recently accessed in Sudbury, Ontario. '
           + 'If you did not grant permission, someone else could be using your account.',
         points: 100,
         description: 'Good choice! This statement will cause John to panick and trust you more by reaching out for help.'
       },
       {
-        id: 'account-hacked',
-        text: 'Your Gmail account has been haked! You need to reply back to get some help from us.',
+        id: 'account-hacked1',
+        text: 'Your Gmail account has been haked! You need to reply back asap to get some help from us.',
         points: 0,
-        description: 'Not a good choice. Spelling mistakes in the word \'haked\' and informal speech will reveal to John that this is a phishing email.'
+        description: 'Not a good choice. Spelling mistakes in the word \'haked\' and informal speech will reveal to John the falsification of this email.'
       }
     ];
   } else {
     return [
       {
-        id: 'account-accessed',
-        text: 'TODO: A good first sentence.',
+        id: 'password-changed1',
+        text: 'Your account password has been changed. '
+          + 'If this was not you, please refrain from signing off, as you may not be able to sign back into this account.',
         points: 100,
-        description: 'TODO: Good choice!'
+        description: 'Good choice! This statement will cause John to panick and trust you more by reaching out for help.'
       },
       {
-        id: 'account-hacked',
-        text: 'TODO: A bad first sentence.',
+        id: 'system-hacked1',
+        text: 'Our compter system was hacked. Now your account is lost and all the data is gone. You need to call us.',
         points: 0,
-        description: 'TODO: Not so good choice.'
+        description: 'Not a good choice. Spelling mistakes in the word \'compter\' and informal speech will reveal to John the falsification of this email.'
       }
     ];
   }
 }
 
+//Body - Second Sentence
 export const getEmailEndOptions = (fromOptionId) => {
   if (fromOptionId === 'itsupport') {
     return [
       {
-        id: 'todo5',
-        text: 'TODO: A bad second sentence from IT support.',
-        points: 0,
-        description: 'TODO: Not so good choice.'
+        id: 'account-accessed2',
+        text: 'Your security is our top priority. ' 
+          + 'Please reply to this email if you have not opened your account in Sudbury, Ontario.',
+        points: 50,
+        description: 'Good choice! There is a small chance John could have opened up his account in Sudbury, Ontario. '
+        + 'He will be tempted to reply back for help.'
       },
       {
-        id: 'todo6',
-        text: 'TODO: A good second sentence from IT support.',
-        points: 50,
-        description: 'TODO: Good choice!'
+        id: 'account-hacked2',
+        text: 'When you reply to this email, please include your full name, address, date of birth, and banking institution.',
+        points: 0,
+        description: 'Bad choice! John is not clueless. '
+          +'Once he realizes that the company is asking for his personal information, this phishing account will be blocked.'
       }
     ];
   } else {
     return [
       {
-        id: 'todo7',
-        text: 'TODO: A bad second sentence.',
+        id: 'system-hacked2',
+        text: 'Call us right now before the comapny closes at 7pm.',
         points: 0,
-        description: 'TODO: Not so good choice.'
+        description: 'Not a good choice. Further spelling mistakes and a specific time will cause suspicion to arise within John.'
       },
       {
-        id: 'todo8',
-        text: 'TODO: A good second sentence.',
+        id: 'password-changed2',
+        text: 'You can reach to our experienced IT Department by replying back to this email with \'Password change request\'.',
         points: 50,
-        description: 'TODO: Good choice!'
+        description: 'Good choice! Adjectives such as \'experienced\' will spark trust and relief. ' 
+          + 'John will not sign out of his account in fear of losing it.'
       }
     ];
   }
 }
 
+//SignOff
 export const getSignOff = (fromOptionId) => {
   return fromOptionId === 'itsupport' ? 'Google' : 'Mary';
 }
