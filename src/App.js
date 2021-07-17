@@ -6,7 +6,7 @@ import { Login } from "./login/Login";
 import { GetPhished } from "./get-phished/GetPhished";
 import { PhishReveal } from "./phish-reveal/PhishReveal";
 import { CheckPhish } from "./check-phish/CheckPhish";
-import { EXPContext, EXPProvider } from "./contexts/EXPContext";
+import { EXPContext, EXPProvider, EXP_PER_LEVEL } from "./contexts/EXPContext";
 import { ProgressBar } from './components/progress-bar/ProgressBar';
 
 export const App = () => (
@@ -20,11 +20,11 @@ export const App = () => (
           <Link to="/check-phish">Check Phish</Link>
           <EXPContext.Consumer>
             {
-              ({exp}) => (
+              ({ expSinceLastLevel, level }) => (
                 <>
-                  <p>{exp} EXP</p>
+                  <p>LV {level} | {expSinceLastLevel} EXP</p>
                   <div className={styles.progress}>
-                    <ProgressBar value={(exp % 1000) / 10} />
+                    <ProgressBar value={(expSinceLastLevel) * 100 / EXP_PER_LEVEL} />
                   </div>
                 </>
               )
