@@ -1,0 +1,38 @@
+.container {
+    padding: 10px 10px 10px 10px;
+    background-image: url('./assets/image.png');
+}
+
+.homepageBody {
+    display: flex;
+    justify-content: center;
+}
+
+.iconBody {
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    width: 300px;
+    height: 300px;
+    background-size: contain;
+    background-image: url('./assets/Phisher-logo.png');
+    animation: unhoveredIcon ease-in 0.4s;
+}
+
+.icon:hover {
+    animation: hoveredIcon ease-out 0.4s forwards;
+}
+
+.homepageTitle {
+    font-weight: bolder;
+}
+@keyframes unhoveredIcon {
+    from { width: 310px; height: 310px; }
+    to { width: 300px; height: 300px; }
+}
+@keyframes hoveredIcon {
+    from { width: 300px; height: 300px; }
+    to { width: 310px; height: 310px; }
+}
