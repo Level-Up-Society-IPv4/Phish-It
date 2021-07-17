@@ -18,8 +18,6 @@
     height: 300px;
     background-size: contain;
     background-image: url('./assets/Phisher-logo.png');
-    animation-name: icon-slides-in;
-    animation-duration: 5s;
     animation: unhoveredIcon ease-in 0.4s;
 }
 
@@ -29,9 +27,6 @@
 
 .homepageTitle {
     font-weight: bolder;
-    animation-name: title-slides-in;
-    animation-duration: 5s;
-    animation: title-slides-in;
 }
 
 @keyframes unhoveredIcon {
@@ -41,14 +36,4 @@
 @keyframes hoveredIcon {
     from { width: 300px; height: 300px; }
     to { width: 310px; height: 310px; }
-}
-
-@keyframes title-slides-in {
-    from {margin-left: 100%;}
-    to {margin-left: 0%;}
-}
-
-@keyframes icon-slides-in{
-    from {margin-right: 100%;}
-    to {margin-right: 0%;}
 }
