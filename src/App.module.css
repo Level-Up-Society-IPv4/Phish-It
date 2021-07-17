@@ -3,6 +3,8 @@
   margin: 3rem auto;
   max-width: 1200px;
   padding: 0.5rem;
+  box-shadow: 0 0 1rem var(--primary-dark);
+  border-radius: 0.3rem;
 }
 
 .labelGroup {
