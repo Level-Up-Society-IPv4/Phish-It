@@ -1,8 +1,7 @@
 import styles from './Login.module.css';
-import { Link } from 'react-router-dom';
 
 export const Login = () => (
-    <div id="homepage">
+    <div id={styles.homepage}>
         <div id="skybluebackground">
             <div id="logintitle">Login</div>
             <div id="email">Email</div>
