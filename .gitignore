@@ -105,3 +105,6 @@ dist
 .tern-port
 
 build
+.vscode
+/functions
+.env

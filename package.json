@@ -11,7 +11,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "NODE_ENV=production npm-run-all build:*",
+    "build:site": "react-scripts build",
+    "build:functions-install-dependencies": "cd functions-dev; for i in */; do cd ${i%/}; yarn; cd ..; done;",
+    "build:zip-functions": "mkdir -p functions; cd functions-dev; for i in */; do zip -r \"../functions/${i%/}.zip\" \"$i\"; done;",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -31,5 +34,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }
