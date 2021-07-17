@@ -2,14 +2,20 @@ import styles from './EmailBuilder.module.css';
 import { useState } from 'react';
 import man from './assets/man.png';
 import { Select } from './components/Select';
-import { FROM_OPTIONS, getSubjectOptions } from '../options';
+import { FROM_OPTIONS, getMessage, getSubjectOptions } from './options';
 
-export const EmailBuilder = () => {
+export const EmailBuilder = ({ finishQuiz }) => {
   const [from, setFrom] = useState(null);
   const [subject, setSubject] = useState(null);
-  const points = subject?.points + from?.points;
 
+  const clear = () => {
+    setFrom(null);
+    setSubject(null);
+  };
+
+  const points = subject?.points + from?.points;
   const showSubject = from !== null;
+  const complete = subject !== null;
 
   return (
     <>
@@ -61,7 +67,16 @@ export const EmailBuilder = () => {
         </div>
       </div>
       {
-        subject && <h1>Score: {points}</h1>
+        complete ? (
+          <div className={styles.scoreContainer}>
+            <h1>Score: {points}</h1>
+            <p className={styles.message}>{getMessage(points)}</p>
+            <button onClick={clear} className={styles.tryAgain}>Try again</button>
+            <button onClick={finishQuiz} className={styles.next}>Who's next?</button>
+          </div>
+        ) : (
+          <p className={styles.message}>Use the buttons to build your email!</p>
+        )
       }
     </>
   );

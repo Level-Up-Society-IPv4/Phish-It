@@ -1,6 +1,6 @@
 .App {
   background-color: white;
-  margin: 3rem auto;
+  margin: 3rem auto 1rem auto;
   max-width: 1200px;
   padding: 0.5rem;
   box-shadow: 0 0 1rem var(--primary-dark);
@@ -13,7 +13,7 @@
 }
 
 .label {
-  background-color: lightgray;
+  background-color: #eeeeee;
   padding: 0 1rem;
   margin: 0.5rem;
   border-radius: 0.7rem;
@@ -32,4 +32,47 @@
 .man {
   height: 2rem;
   margin: 0 0.6rem 0 0;
+}
+
+.message {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.scoreContainer {
+  text-align: center;
+}
+
+.tryAgain {
+  background-color: #aaa;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  min-width: 12rem;
+  box-shadow: 0 0px 0.3rem var(--primary-dark);
+  margin: 3rem 1rem;
+}
+.tryAgain:active {
+  background-color: #ccc;
+}
+
+.next {
+  background-color: var(--accent);
+  text-shadow: 0 0 3px var(--accent-dark);
+  color: white;
+  font-size: 2rem;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  min-width: 12rem;
+  box-shadow: 0 0px 0.3rem var(--primary-dark);
+  margin: 3rem 1rem;
+}
+.next:active {
+  background-color: var(--accent-light);
 }

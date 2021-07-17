@@ -3,7 +3,7 @@ export const FROM_OPTIONS = [
     id: 'itsupport',
     text: 'ITSupport@Goongle.com',
     points: 100,
-    description: 'Excellent! Goongle looks just like Google, '
+    description: 'Excellent! “Goongle” looks just like “Google”, '
       + 'so John will think your email is from them.'
   },
   {
@@ -66,5 +66,25 @@ export const getSubjectOptions = (fromOptionId) => {
         description: 'This subject is not alarming. Try something that will make him act rashly!'
       }
     ];
+  }
+}
+
+export const getMessage = (score) => {
+  if (score === 200) {
+    return "John had no idea what hit him! Your phishing skills blew him right out of the water. "
+      + "He didn't even know he was tricked until his boss asked him about the leaked documents."
+  } else if (score >= 150) {
+    return 'John fell right into your trap! He sent you his password, then realized his mistake. '
+      + 'He scrambled, but it was too late!';
+  } else if (score >= 100) {
+    return 'John thought something was off about this email, but he was too busy to worry about it. '
+      + "He didn't want to waste any time figuring it out, so he sent you his password!"
+  } else if (score >= 50) {
+    return 'At first John believed you, but then he took a closer look. '
+      + 'Something tipped him off about this email, so he deleted it and never responded.';
+  } else {
+    return 'John took one look at this email and knew it was a scam! '
+      + 'He reported it to his IT department, proud of his detective skills. '
+      + 'The IT department got in touch with the police, and you were arrested!'
   }
 }
