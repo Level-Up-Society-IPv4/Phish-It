@@ -4,6 +4,7 @@ import { Quiz } from "./quiz/Quiz";
 import { Login } from "./login/Login";
 import { GetPhished } from "./get-phished/GetPhished";
 import { PhishReveal } from "./phish-reveal/PhishReveal";
+import { CheckPhish } from "./check-phish/CheckPhish";
 
 export const App = () => (
   <BrowserRouter>
@@ -12,6 +13,7 @@ export const App = () => (
         <Link to="/">Home</Link>
         <Link to="/quiz">Quiz</Link>
         <Link to="/get-phished">Get Phished</Link>
+        <Link to="/check-phish">Check Phish</Link>
       </nav>
       <Switch>
         <Route path="/quiz">
@@ -22,6 +24,9 @@ export const App = () => (
         </Route>
         <Route path="/get-phished">
           <GetPhished />
+        </Route>
+        <Route path="/check-phish">
+          <CheckPhish />
         </Route>
         <Route path="/phish-reveal">
           <PhishReveal />

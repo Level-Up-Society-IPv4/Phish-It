@@ -30,7 +30,7 @@ export const GetPhished = () => {
         {
           lastSentEmail ? (
             isError ? `Error emailing '${lastSentEmail}'.`
-              : `Okay, we'll phish '${lastSentEmail}'! You might have to check your spam folder.`
+              : `Okay, we'll phish '${lastSentEmail}'! You might have to check your spam folder. When you get a phish, you can check if it is from us using the 'Check Phish' page.`
           ) : 'Enter your email to get phished!'
         }
       </p>
