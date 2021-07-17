@@ -11,7 +11,7 @@ export const EXPProvider = ({ children }) => {
   useEffect(() => localStorage.setItem('exp', exp), [exp]);
 
   const expSinceLastLevel = exp % EXP_PER_LEVEL;
-  const level = Math.floor(exp / EXP_PER_LEVEL);
+  const level = Math.floor(exp / EXP_PER_LEVEL) + 1;
 
   return (
     <EXPContext.Provider value={{
