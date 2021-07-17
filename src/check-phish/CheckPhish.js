@@ -1,5 +1,6 @@
 import styles from './CheckPhish.module.css';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { EXPContext } from '../contexts/EXPContext';
 
 // keep this in sync with the version in functions-dev/phish/phish.js
 const SUBJECTS = new Set([
@@ -17,12 +18,18 @@ const SUBJECTS = new Set([
 ]);
 
 export const CheckPhish = () => {
+  const { addExp } = useContext(EXPContext);
   const [subject, setSubject] = useState('');
   const [checked, setChecked] = useState(false)
   const [isFakePhish, setIsFakePhish] = useState(false);
   const checkPhish = async (event) => {
     event.preventDefault();
-    setIsFakePhish(SUBJECTS.has(subject));
+    setSubject('');
+    const subjectValid = SUBJECTS.has(subject);
+    setIsFakePhish(subjectValid);
+    if (subjectValid) {
+      addExp(50);
+    }
     setChecked(true);
   };
 
@@ -31,7 +38,7 @@ export const CheckPhish = () => {
       <p className={styles.prompt}>
         {
           checked ? (
-            isFakePhish ? 'Nice catch! That was us trying to trick you. Take 50 points!'
+            isFakePhish ? 'Nice catch! That was us trying to trick you. Take 50 EXP!'
               : "Uh oh, that wasn't us! You should report that email to your IT department."
           ) : 'Did we try to phish you? Enter the subject line here:'
         }
