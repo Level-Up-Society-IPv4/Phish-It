@@ -1,3 +1,5 @@
+
+//Email Sender
 export const FROM_OPTIONS = [
   {
     id: 'itsupport',
@@ -23,6 +25,7 @@ export const FROM_OPTIONS = [
   }
 ];
 
+//Email Subject Line
 export const getSubjectOptions = (fromOptionId) => {
   if (fromOptionId === 'itsupport') {
     return [
@@ -69,6 +72,7 @@ export const getSubjectOptions = (fromOptionId) => {
   }
 }
 
+//Body - Greeting
 export const getGreetingOptions = (fromOptionId) => {
   if (fromOptionId === 'itsupport') {
     return [
@@ -103,32 +107,34 @@ export const getGreetingOptions = (fromOptionId) => {
   }
 }
 
+//Body - Situation
 export const getEmailStartOptions = (fromOptionId) => {
   if (fromOptionId === 'itsupport') {
     return [
       {
-        id: 'todo1',
-        text: 'TODO: A good first sentence from IT support.',
+        id: 'account-accessed',
+        text: 'Your Gmail account was recently accessed in Sudbury, Ontario.'
+          + 'If you did not grant permission, someone else could be using your account.',
         points: 100,
-        description: 'TODO: Good choice!'
+        description: 'Good choice! This statement will cause John to panick and trust you more by reaching out for help.'
       },
       {
-        id: 'todo2',
-        text: 'TODO: A bad first sentence from IT support.',
+        id: 'account-hacked',
+        text: 'Your Gmail account has been haked! You need to reply back to get some help from us.',
         points: 0,
-        description: 'TODO: Not so good choice.'
+        description: 'Not a good choice. Spelling mistakes in the word \'haked\' and informal speech will reveal to John that this is a phishing email.'
       }
     ];
   } else {
     return [
       {
-        id: 'todo3',
+        id: 'account-accessed',
         text: 'TODO: A good first sentence.',
         points: 100,
         description: 'TODO: Good choice!'
       },
       {
-        id: 'todo4',
+        id: 'account-hacked',
         text: 'TODO: A bad first sentence.',
         points: 0,
         description: 'TODO: Not so good choice.'
