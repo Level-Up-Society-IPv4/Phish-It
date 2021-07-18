@@ -1,6 +1,9 @@
 import styles from './Dashboard.module.css';
 import { useState } from 'react';
 import playerIcon from './assets/man.png';
+import { Link } from "react-router-dom";
+import { ProgressBar } from '../components/progress-bar/ProgressBar';
+import { EXPContext, EXPProvider, EXP_PER_LEVEL } from "../contexts/EXPContext";
 
 export const Dashboard = () => {
     const [exp, setExp] = useState(0);
@@ -20,34 +23,29 @@ export const Dashboard = () => {
                                 <h3 className={styles.player}>Streak: 5</h3>
                             </th>
                             <th>
-                                <h3 className={styles.player}>Friends: 10</h3>
+                                <h3 className={styles.player}>Group: Phishermen</h3>
                             </th>
                             <table className={styles.progressBar}>
-                                <div className={styles.pbc}></div>
-                                <div className={styles.pbg}></div>
+                                <EXPContext.Consumer>
+                                    {
+                                    ({ expSinceLastLevel, level }) => (
+                                        <div className={styles.pbContainer}>
+                                            <div className={styles.progress}>
+                                                <ProgressBar value={(expSinceLastLevel) * 100 / EXP_PER_LEVEL} />
+                                            </div>
+                                            <p>LV {level} | {expSinceLastLevel} EXP</p>
+                                        </div>
+                                    )
+                                    }
+                                </EXPContext.Consumer>
                             </table>
-                            <div className={styles.inlines}>
-                                    <h5>10</h5>
-                                    <h5>20</h5>
-                                    <h5>30</h5>
-                                    <h5>40</h5>
-                                    <h5>50</h5>
-                            </div>
-                            <div className={styles.exp}>
-                                <h3>250 Exp</h3>
-                            </div>
             </table>
+                <div className={styles.dbEmails}>
+                    <Link to="/get-phished"><button className={styles.btn}>Get Phished</button></Link>
+                    <Link to="/check-phish"><button className={styles.btn}>Check Phish</button></Link>
+                </div>
                 <table className="dbtable">
                     <th>
-                        <div className={styles.dbEmails}>
-                            <button className={styles.btn}>Emails</button>
-                            <button className={styles.btn}>Quiz</button>
-                        </div>
-                        <div className={styles.dbQuizContainer}>
-                        </div>
-                        <div className={styles.dbStats}>
-
-                        </div>
                     </th>
                 </table>
             </div>

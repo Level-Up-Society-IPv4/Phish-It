@@ -4,10 +4,11 @@ import { Home } from "./home/Home";
 import { Quiz } from "./quiz/Quiz";
 import { Login } from "./login/Login";
 import { GetPhished } from "./get-phished/GetPhished";
+import { Dashboard } from './dashboard/Dashboard';
 import { PhishReveal } from "./phish-reveal/PhishReveal";
 import { CheckPhish } from "./check-phish/CheckPhish";
 import { EXPContext, EXPProvider, EXP_PER_LEVEL } from "./contexts/EXPContext";
-import { ProgressBar } from './components/progress-bar/ProgressBar';
+// import { ProgressBar } from './components/progress-bar/ProgressBar';
 
 export const App = () => (
   <EXPProvider>
@@ -24,7 +25,7 @@ export const App = () => (
                 <>
                   <p>LV {level} | {expSinceLastLevel} EXP</p>
                   <div className={styles.progress}>
-                    <ProgressBar value={(expSinceLastLevel) * 100 / EXP_PER_LEVEL} />
+                    {/* <ProgressBar value={(expSinceLastLevel) * 100 / EXP_PER_LEVEL} /> */}
                   </div>
                 </>
               )
@@ -32,6 +33,9 @@ export const App = () => (
           </EXPContext.Consumer>
         </nav>
         <Switch>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
           <Route path="/quiz">
             <Quiz />
           </Route>
