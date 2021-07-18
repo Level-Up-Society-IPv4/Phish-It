@@ -27,9 +27,9 @@ export const Dashboard = () => {
                                 <h3 className={styles.player}>Group: Phishermen</h3>
                             </th>
                             <th>
-                                <a className={styles.getmorecoins} href="coin-shop">
+                                <button className={styles.getmorecoins} onclick="window.location.href='coin-shop.jsx'">
                                     <img src={coin} className={styles.coin}></img> Get more coins!
-                                </a>
+                                </button>
                             </th>
                             <table className={styles.progressBar}>
                                 <EXPContext.Consumer>
