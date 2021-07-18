@@ -26,6 +26,9 @@ export const Dashboard = () => {
                                 <h3 className={styles.player}>Group: Phishermen</h3>
                             </th>
                             <th>
+                                <h3 className={styles.player}>Group: Get more coins!</h3>
+                            </th>
+                            <th>
                                 <button className={styles.player}>
                                     <img src="..assets/coin.png" className={styles.coin}></img> Get more coins!
                                 </button>
