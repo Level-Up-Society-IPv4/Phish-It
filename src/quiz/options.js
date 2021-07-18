@@ -184,7 +184,7 @@ export const getEmailEndOptions = (fromOptionId) => {
     ];
   }
 }
-
+// Attachment options
 export const ATTACHMENT_OPTIONS = [
   {
     id: 'pdf',
