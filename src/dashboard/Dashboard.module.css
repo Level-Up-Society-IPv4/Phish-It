@@ -69,8 +69,20 @@
     padding-left: 5%;
     max-height: 50px;
 }
-
 .coin {
     width: 2rem;
     margin: 0 0.3rem;
+  }
+
+.getmorecoins {
+    background-color: var(--accent);
+    text-shadow: 0 0 3px var(--accent-dark);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    min-width: 12rem;
+    box-shadow: 0 0px 0.3rem var(--primary-dark);
+    margin: 3rem 1rem;
   }

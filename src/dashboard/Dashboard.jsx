@@ -4,6 +4,7 @@ import playerIcon from '../assets/man.png';
 import { Link } from "react-router-dom";
 import { ProgressBar } from '../components/progress-bar/ProgressBar';
 import { EXPContext, EXPProvider, EXP_PER_LEVEL } from "../contexts/EXPContext";
+import coin from '../assets/coin.png';
 
 export const Dashboard = () => {
     const [exp, setExp] = useState(0);
@@ -25,9 +26,9 @@ export const Dashboard = () => {
                             <th>
                                 <h3 className={styles.player}>Group: Phishermen</h3>
                             </th>
-                            <th padding="25px">
-                                <button className={styles.btn}>
-                                    <img src="../assets/coin.png" className={styles.coin}></img> Get more coins!
+                            <th>
+                                <button className={styles.getmorecoins}>
+                                    <img src={coin} className={styles.coin}></img> Get more coins!
                                 </button>
                             </th>
                             <table className={styles.progressBar}>
