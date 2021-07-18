@@ -1,5 +1,6 @@
 import pdf from '../assets/pdf.png';
 import goongle from '../assets/goongle.png';
+import video from '..assets/video.png';
 
 //Email Sender
 export const FROM_OPTIONS = [
@@ -184,6 +185,7 @@ export const getEmailEndOptions = (fromOptionId) => {
     ];
   }
 }
+
 // Attachment options
 export const ATTACHMENT_OPTIONS = [
   {
@@ -202,6 +204,15 @@ export const ATTACHMENT_OPTIONS = [
     description: 'This logo will make your email look much more legitimate!',
     cost: 50,
     image: goongle
+  },
+  {
+    id: 'video',
+    text: 'IT Support video',
+    points: 300,
+    description: 'Great pick! John will be lured in by your video, eager to get some help. '
+    + 'However, he doesn\'t know what is awaiting him!',
+    cost: 150,
+    image: video
   },
   {
     id: 'none',
