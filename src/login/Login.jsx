@@ -10,7 +10,7 @@ export const Login = () => (
         <div id={styles.password}>Password</div>
         <div id={styles.textbox2} type="textbox"></div>
         <div id={styles.yellowrect2}></div>
-        <Link to="/quizintro">
+        <Link to="/quiz">
             <div className={styles.login}>Login</div>
         </Link>
         <div id={styles.noaccount}>No Account?</div>
