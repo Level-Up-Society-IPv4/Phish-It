@@ -1,6 +1,7 @@
 import styles from './CheckPhish.module.css';
 import { useContext, useState } from 'react';
 import { EXPContext } from '../contexts/EXPContext';
+import { CoinContext } from '../contexts/CoinContext';
 
 // keep this in sync with the version in functions-dev/phish/phish.js
 const SUBJECTS = new Set([
@@ -19,6 +20,7 @@ const SUBJECTS = new Set([
 
 export const CheckPhish = () => {
   const { addExp } = useContext(EXPContext);
+  const { addCoins } = useContext(CoinContext);
   const [subject, setSubject] = useState('');
   const [checked, setChecked] = useState(false)
   const [isFakePhish, setIsFakePhish] = useState(false);
@@ -29,6 +31,7 @@ export const CheckPhish = () => {
     setIsFakePhish(subjectValid);
     if (subjectValid) {
       addExp(50);
+      addCoins(5);
     }
     setChecked(true);
   };
