@@ -15,7 +15,6 @@ export const Login = () => (
         </Link>
         <div id={styles.noaccount}>No Account?</div>
         <div id={styles.yellowrect1}></div>           
-        <div id={styles.companyaccount}>Create Company Account</div>      
-    </div>
-
+        <div id={styles.companyaccount}>Create Company Account</div> 
+    </div>  
 );
