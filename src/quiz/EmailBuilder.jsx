@@ -26,7 +26,7 @@ export const EmailBuilder = ({ finishQuiz }) => {
     setAttachment(null);
   };
 
-  const points = subject?.points + from?.points + greeting?.points + emailStart?.points + emailEnd?.points;
+  const points = subject?.points + from?.points + greeting?.points + emailStart?.points + emailEnd?.points + attachment?.points;
   const showSubject = from !== null;
   const showGreeting = subject !== null;
   const showEmailStart = greeting !== null;
