@@ -1,5 +1,7 @@
 const { createContext, useState, useEffect } = require('react');
 
+export const EXP_PER_LEVEL = 1000;
+
 export const EXPContext = createContext();
 
 export const EXPProvider = ({ children }) => {
@@ -8,8 +10,16 @@ export const EXPProvider = ({ children }) => {
 
   useEffect(() => localStorage.setItem('exp', exp), [exp]);
 
+  const expSinceLastLevel = exp % EXP_PER_LEVEL;
+  const level = Math.floor(exp / EXP_PER_LEVEL) + 1;
+
   return (
-    <EXPContext.Provider value={{ exp, addExp }}>
+    <EXPContext.Provider value={{
+      exp,
+      expSinceLastLevel,
+      level,
+      addExp
+    }}>
       {children}
     </EXPContext.Provider>
   );

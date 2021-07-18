@@ -1,3 +1,4 @@
+import styles from './App.module.css';
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import { Home } from "./home/Home";
 import { Quiz } from "./quiz/Quiz";
@@ -5,7 +6,8 @@ import { Login } from "./login/Login";
 import { GetPhished } from "./get-phished/GetPhished";
 import { PhishReveal } from "./phish-reveal/PhishReveal";
 import { CheckPhish } from "./check-phish/CheckPhish";
-import { EXPContext, EXPProvider } from "./contexts/EXPContext";
+import { EXPContext, EXPProvider, EXP_PER_LEVEL } from "./contexts/EXPContext";
+import { ProgressBar } from './components/progress-bar/ProgressBar';
 
 export const App = () => (
   <EXPProvider>
@@ -18,7 +20,14 @@ export const App = () => (
           <Link to="/check-phish">Check Phish</Link>
           <EXPContext.Consumer>
             {
-              ({exp}) => <p>{exp} EXP</p>
+              ({ expSinceLastLevel, level }) => (
+                <>
+                  <p>LV {level} | {expSinceLastLevel} EXP</p>
+                  <div className={styles.progress}>
+                    <ProgressBar value={(expSinceLastLevel) * 100 / EXP_PER_LEVEL} />
+                  </div>
+                </>
+              )
             }
           </EXPContext.Consumer>
         </nav>

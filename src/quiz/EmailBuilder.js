@@ -100,37 +100,35 @@ export const EmailBuilder = ({ finishQuiz }) => {
             )
           )
         }
+        {
+          showEmailStart && !emailStart && (
+              <div className={styles.labelGroup}>
+                <Select
+                  options={getEmailStartOptions(from.id)}
+                  nextCallback={setEmailStart}
+                />
+              </div>
+            )
+          }
         <p className={styles.emailText}>
           {
-            showEmailStart && (
-              emailStart ? (
-                emailStart.text
-              ) : (
-                <div className={styles.labelGroup}>
-                  <Select
-                    options={getEmailStartOptions(from.id)}
-                    nextCallback={setEmailStart}
-                  />
-                </div>
-              )
-            )
+            showEmailStart && emailStart && emailStart.text
           }
           {' '}
           {
-            showEmailEnd && (
-              emailEnd ? (
-                emailEnd.text
-              ) : (
-                <div className={styles.labelGroup}>
-                  <Select
-                    options={getEmailEndOptions(from.id)}
-                    nextCallback={finish}
-                  />
-                </div>
-              )
-            )
+            showEmailEnd && emailEnd && emailEnd.text
           }
         </p>
+        {
+          showEmailEnd && !emailEnd && (
+            <div className={styles.labelGroup}>
+              <Select
+                options={getEmailEndOptions(from.id)}
+                nextCallback={finish}
+              />
+            </div>
+          )
+        }
         {
           complete && (
             <p className={styles.emailText}>{getSignOff(from.id)}</p>

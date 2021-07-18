@@ -1,0 +1,14 @@
+.bar {
+  height: 2rem;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  background-color: #eee;
+}
+
+.fill {
+  height: 2rem;
+  width: 100%;
+  background-color: var(--accent);
+  transition: 0.3s ease-in-out;
+}
