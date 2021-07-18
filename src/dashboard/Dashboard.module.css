@@ -75,7 +75,7 @@
   }
 
 .getmorecoins {
-    background-color: #1BDB2F, 100%;
+    background-color: #1BDB2F;
     text-shadow: 0 0 3px var(--accent-dark);
     color: white;
     font-size: 25px;
