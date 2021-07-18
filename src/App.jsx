@@ -10,6 +10,7 @@ import { EXPContext, EXPProvider, EXP_PER_LEVEL } from "./contexts/EXPContext";
 import { ProgressBar } from './components/progress-bar/ProgressBar';
 import { CoinContext, CoinProvider } from './contexts/CoinContext';
 import coin from './assets/coin.png'
+import { CoinShop } from './coin-shop/CoinShop';
 
 export const App = () => (
   <EXPProvider>
@@ -59,6 +60,9 @@ export const App = () => (
             </Route>
             <Route path="/phish-reveal">
               <PhishReveal />
+            </Route>
+            <Route path="/coin-shop">
+              <CoinShop />
             </Route>
             <Route path="/">
               <Home />

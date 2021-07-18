@@ -1,88 +1,92 @@
 .outterContainer {
-    background-color: #126BB7;
-    height: 500px;
+  background-color: #126bb7;
+  height: 500px;
 }
 .progress {
-    width: 100%;
+  width: 100%;
 }
 .pbContainer {
-    display:flex;
-    width: 100%;
-    flex-direction: column;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 }
 .dashboardContainer {
-    background-color: #1E96FC;
-    margin: 0% 20% 0% 20%;
-    height: 400px;
+  background-color: #1e96fc;
+  margin: 0% 20% 0% 20%;
+  height: 400px;
 }
 .dbQuizContainer {
-    background-color: #ffff;
-    width: 30%;
-    height: 100%;
+  background-color: #ffff;
+  width: 30%;
+  height: 100%;
 }
 .btn {
-    background-color: #FDC500;
-    color: white;
-    font-size: 2rem;
-    box-shadow: 0 0px 0.3rem var(--primary-dark);
-    min-width: 150px;
+  background-color: #fdc500;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 0px 0.3rem var(--primary-dark);
+  min-width: 150px;
 }
 .progressBar {
-    background-color: white;
-    width: 100%;
-    display: flex;
+  background-color: white;
+  width: calc(100% - 2rem);
+  display: flex;
+  padding: 1rem 1rem 0 1rem;
 }
 .exp {
-    margin-left: 43%;
+  margin-left: 43%;
 }
 .player {
-    padding: 20px;
-    color: white;
-    font-size: 1rem;
-    box-shadow: 0 0px 0.3rem var(--primary-dark);
+  padding: 20px;
+  color: white;
+  font-size: 1rem;
+  box-shadow: 0 0px 0.3rem var(--primary-dark);
 }
 .dbEmails {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 8rem;
-    width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 8rem;
+  width: 100%;
 }
 .playerIcon {
-    width: 50px;
-    height: 50px;
-    padding: 5px 5px 5px 5px;
-    margin-top: 27%;
-    box-shadow: 0 0px 0.3rem var(--primary-dark);
+  width: 50px;
+  height: 50px;
+  padding: 5px 5px 5px 5px;
+  box-shadow: 0 0px 0.3rem var(--primary-dark);
 }
 .dbPlayer {
-    display:flex;
-    flex-wrap: wrap;
-    box-shadow: 0 0px 0.3rem var(--primary-dark);
-    width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 0px 0.3rem var(--primary-dark);
+  width: 100%;
+  align-items: center;
+  padding: 0 1rem;
 }
 .inlines {
-    display: inline-flex;
-    justify-content: space-between;
-    width: 100%;
-    background-color: white;
-    padding-right: 5%;
-    padding-left: 5%;
-    max-height: 50px;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: white;
+  padding-right: 5%;
+  padding-left: 5%;
+  max-height: 50px;
 }
 .coin {
-    width: 2rem;
-    margin: 0 0.3rem;
-  }
+  width: 2rem;
+  margin: 0 0.3rem 0 0;
+}
 
 .getmorecoins {
-    background-color: #1BDB2F;
-    text-shadow: 0 0 1px var(--accent-dark);
-    color: white;
-    font-size: 20px;
-    border: none;
-    border-radius: 2px;
-    padding: 2px;
-    min-width: 20px;
-    box-shadow: 0 0px 3px var(--primary-dark);
-    margin: 15px 15px;
-  }
+  background-color: #1bdb2f;
+  text-shadow: 0 0 1px var(--accent-dark);
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 2px;
+  padding: 0.5rem 0.8rem;
+  min-width: 20px;
+  box-shadow: 0 0px 3px var(--primary-dark);
+  margin: 15px 15px;
+  display: flex;
+  align-items: center;
+}
