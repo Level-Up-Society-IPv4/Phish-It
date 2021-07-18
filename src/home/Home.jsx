@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export const Home = () => (
   <div className={styles.container}>
     <div className={styles.iconBody}>
-    <Link to="/login">
+    <Link to="/dashboard">
       <div className={styles.icon}>
       </div>
     </Link>
