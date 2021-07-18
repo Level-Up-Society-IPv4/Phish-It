@@ -76,13 +76,13 @@
 
 a.getmorecoins {
     background-color: #1BDB2F;
-    text-shadow: 0 0 3px var(--accent-dark);
+    text-shadow: 0 0 1px var(--accent-dark);
     color: white;
-    font-size: 25px;
+    font-size: 20px;
     border: none;
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 2px;
+    padding: 2px;
     min-width: 20px;
     box-shadow: 0 0px 3px var(--primary-dark);
-    margin: 10px 10px;
+    /*margin: 10px 10px;*/
   }
