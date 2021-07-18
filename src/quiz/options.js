@@ -1,3 +1,5 @@
+import pdf from '../assets/pdf.png';
+import goongle from '../assets/goongle.png';
 
 //Email Sender
 export const FROM_OPTIONS = [
@@ -182,6 +184,31 @@ export const getEmailEndOptions = (fromOptionId) => {
     ];
   }
 }
+
+export const ATTACHMENT_OPTIONS = [
+  {
+    id: 'pdf',
+    text: 'Infected PDF document',
+    points: 200,
+    description: "Wow! Now you can compromise John's computer if he opens this file. "
+      + "You don't even need him to send you his password!",
+    cost: 100,
+    image: pdf
+  },
+  {
+    id: 'goongle',
+    text: 'Fake "Goongle" logo',
+    points: 100,
+    description: 'This logo will make your email look much more legitimate!',
+    cost: 50,
+    image: goongle
+  },
+  {
+    id: 'none',
+    text: 'None',
+    points: 0
+  }
+]
 
 //SignOff
 export const getSignOff = (fromOptionId) => {

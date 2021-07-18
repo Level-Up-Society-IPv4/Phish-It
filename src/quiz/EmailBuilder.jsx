@@ -2,7 +2,7 @@ import styles from './EmailBuilder.module.css';
 import { useContext, useState } from 'react';
 import man from '../assets/man.png';
 import { Select } from './components/Select';
-import { FROM_OPTIONS, getEmailStartOptions, getEmailEndOptions, getGreetingOptions, getMessage, getSignOff, getSubjectOptions } from './options';
+import { FROM_OPTIONS, getEmailStartOptions, getEmailEndOptions, getGreetingOptions, getMessage, getSignOff, getSubjectOptions, ATTACHMENT_OPTIONS } from './options';
 import { EXPContext } from '../contexts/EXPContext';
 import { CoinContext } from '../contexts/CoinContext';
 import coin from '../assets/coin.png';
@@ -15,6 +15,7 @@ export const EmailBuilder = ({ finishQuiz }) => {
   const [greeting, setGreeting] = useState(null);
   const [emailStart, setEmailStart] = useState(null);
   const [emailEnd, setEmailEnd] = useState(null);
+  const [attachment, setAttachment] = useState(null);
 
   const clear = () => {
     setFrom(null);
@@ -22,6 +23,7 @@ export const EmailBuilder = ({ finishQuiz }) => {
     setGreeting(null);
     setEmailStart(null);
     setEmailEnd(null);
+    setAttachment(null);
   };
 
   const points = subject?.points + from?.points + greeting?.points + emailStart?.points + emailEnd?.points;
@@ -29,11 +31,13 @@ export const EmailBuilder = ({ finishQuiz }) => {
   const showGreeting = subject !== null;
   const showEmailStart = greeting !== null;
   const showEmailEnd = emailStart !== null;
-  const complete = emailEnd !== null;
+  const showSignOff = emailEnd !== null;
+  const showAttachment = emailEnd !== null;
+  const complete = attachment !== null;
 
-  const finish = (newEmailEnd) => {
-    setEmailEnd(newEmailEnd);
-    const points = subject?.points + from?.points + greeting?.points + emailStart?.points + newEmailEnd?.points;
+  const finish = (newAttachment) => {
+    setAttachment(newAttachment);
+    const points = subject.points + from.points + greeting.points + emailStart.points + emailEnd.points + newAttachment.points;
     addExp(points);
     addCoins(Math.floor(points / 10));
   }
@@ -129,16 +133,34 @@ export const EmailBuilder = ({ finishQuiz }) => {
             <div className={styles.labelGroup}>
               <Select
                 options={getEmailEndOptions(from.id)}
-                nextCallback={finish}
+                nextCallback={setEmailEnd}
               />
             </div>
           )
         }
         {
-          complete && (
+          showSignOff && (
             <p className={styles.emailText}>{getSignOff(from.id)}</p>
           )
         }
+        <div className={styles.labelGroup}>
+          <div className={styles.label}>
+            <p className={styles.labelText}>Attachment:</p>
+          </div>
+          {
+            showAttachment && (
+              attachment ? (
+                attachment.image ? <img src={attachment.image} alt={attachment.text} className={styles.attachmentImage} />
+                  : <p className={styles.emailText}>{attachment.text}</p>
+              ) : (
+                <Select
+                  options={ATTACHMENT_OPTIONS}
+                  nextCallback={finish}
+                />
+              )
+            )
+          }
+        </div>
       </div>
       {
         complete ? (

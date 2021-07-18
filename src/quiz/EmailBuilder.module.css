@@ -10,6 +10,7 @@
 .labelGroup {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .label {
@@ -100,4 +101,8 @@
 }
 .next:active {
   background-color: var(--accent-light);
+}
+
+.attachmentImage {
+  width: 15rem;
 }
