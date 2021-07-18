@@ -30,7 +30,7 @@ export const Dashboard = () => {
                             </th>
                             <th>
                                 <button className={styles.player}>
-                                    <img src="..assets/coin.png" className={styles.coin}></img> Get more coins!
+                                    <img src="../assets/coin.png" className={styles.coin}></img> Get more coins!
                                 </button>
                             </th>
                             <table className={styles.progressBar}>

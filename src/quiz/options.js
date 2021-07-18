@@ -1,6 +1,6 @@
 import pdf from '../assets/pdf.png';
 import goongle from '../assets/goongle.png';
-import video from '..assets/video.png';
+import video from '../assets/video.png';
 
 //Email Sender
 export const FROM_OPTIONS = [
