@@ -72,3 +72,8 @@
     padding-left: 5%;
     max-height: 50px;
 }
+
+.coin {
+    width: 2rem;
+    margin: 0 0.3rem;
+  }

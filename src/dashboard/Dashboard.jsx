@@ -25,6 +25,11 @@ export const Dashboard = () => {
                             <th>
                                 <h3 className={styles.player}>Group: Phishermen</h3>
                             </th>
+                            <th>
+                                <button className={styles.player}>
+                                    <img src="..assets/coin.png" className={styles.coin}></img> Get more coins!
+                                </button>
+                            </th>
                             <table className={styles.progressBar}>
                                 <EXPContext.Consumer>
                                     {
