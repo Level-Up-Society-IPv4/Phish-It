@@ -1,6 +1,6 @@
 import styles from './Dashboard.module.css';
 import { useState } from 'react';
-import playerIcon from './assets/man.png';
+import playerIcon from '../assets/man.png';
 import { Link } from "react-router-dom";
 import { ProgressBar } from '../components/progress-bar/ProgressBar';
 import { EXPContext, EXPProvider, EXP_PER_LEVEL } from "../contexts/EXPContext";

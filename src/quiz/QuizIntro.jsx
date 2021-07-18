@@ -1,5 +1,5 @@
 import styles from './QuizIntro.module.css';
-import man from './assets/man.png';
+import man from '../assets/man.png';
 
 export const QuizIntro = ({ startQuiz }) => (
   <div className={styles.container}>

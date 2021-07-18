@@ -1,12 +1,15 @@
 import styles from './EmailBuilder.module.css';
 import { useContext, useState } from 'react';
-import man from './assets/man.png';
+import man from '../assets/man.png';
 import { Select } from './components/Select';
 import { FROM_OPTIONS, getEmailStartOptions, getEmailEndOptions, getGreetingOptions, getMessage, getSignOff, getSubjectOptions } from './options';
 import { EXPContext } from '../contexts/EXPContext';
+import { CoinContext } from '../contexts/CoinContext';
+import coin from '../assets/coin.png';
 
 export const EmailBuilder = ({ finishQuiz }) => {
   const { addExp } = useContext(EXPContext);
+  const { addCoins } = useContext(CoinContext);
   const [from, setFrom] = useState(null);
   const [subject, setSubject] = useState(null);
   const [greeting, setGreeting] = useState(null);
@@ -30,7 +33,9 @@ export const EmailBuilder = ({ finishQuiz }) => {
 
   const finish = (newEmailEnd) => {
     setEmailEnd(newEmailEnd);
-    addExp(subject?.points + from?.points + greeting?.points + emailStart?.points + newEmailEnd?.points)
+    const points = subject?.points + from?.points + greeting?.points + emailStart?.points + newEmailEnd?.points;
+    addExp(points);
+    addCoins(Math.floor(points / 10));
   }
 
   return (
@@ -138,7 +143,16 @@ export const EmailBuilder = ({ finishQuiz }) => {
       {
         complete ? (
           <div className={styles.scoreContainer}>
-            <h1>Score: {points}</h1>
+            <h1 className={styles.score}>Score: {points}</h1>
+            {
+              points >= 10 && (
+                <div className={styles.coinMessage}>
+                  <p>+</p>
+                  <img src={coin} alt="coin" className={styles.coin} />
+                  <p>{Math.floor(points / 10)}</p>
+                </div>
+              )
+            }
             <p className={styles.message}>{getMessage(points)}</p>
             <button onClick={clear} className={styles.tryAgain}>Try again</button>
             <button onClick={finishQuiz} className={styles.next}>Who's next?</button>
