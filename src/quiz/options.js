@@ -227,7 +227,7 @@ export const getSignOff = (fromOptionId) => {
 }
 
 export const getMessage = (score) => {
-  if (score === 400) {
+  if (score >= 400) {
     return "John had no idea what hit him! Your phishing skills blew him right out of the water. "
       + "He didn't even know he was tricked until his boss asked him about the leaked documents."
   } else if (score >= 300) {
