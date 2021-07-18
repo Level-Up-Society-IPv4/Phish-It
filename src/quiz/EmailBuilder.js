@@ -1,10 +1,12 @@
 import styles from './EmailBuilder.module.css';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import man from './assets/man.png';
 import { Select } from './components/Select';
 import { FROM_OPTIONS, getEmailStartOptions, getEmailEndOptions, getGreetingOptions, getMessage, getSignOff, getSubjectOptions } from './options';
+import { EXPContext } from '../contexts/EXPContext';
 
 export const EmailBuilder = ({ finishQuiz }) => {
+  const { addExp } = useContext(EXPContext);
   const [from, setFrom] = useState(null);
   const [subject, setSubject] = useState(null);
   const [greeting, setGreeting] = useState(null);
@@ -25,6 +27,11 @@ export const EmailBuilder = ({ finishQuiz }) => {
   const showEmailStart = greeting !== null;
   const showEmailEnd = emailStart !== null;
   const complete = emailEnd !== null;
+
+  const finish = (newEmailEnd) => {
+    setEmailEnd(newEmailEnd);
+    addExp(subject?.points + from?.points + greeting?.points + emailStart?.points + newEmailEnd?.points)
+  }
 
   return (
     <>
@@ -93,37 +100,35 @@ export const EmailBuilder = ({ finishQuiz }) => {
             )
           )
         }
+        {
+          showEmailStart && !emailStart && (
+              <div className={styles.labelGroup}>
+                <Select
+                  options={getEmailStartOptions(from.id)}
+                  nextCallback={setEmailStart}
+                />
+              </div>
+            )
+          }
         <p className={styles.emailText}>
           {
-            showEmailStart && (
-              emailStart ? (
-                emailStart.text
-              ) : (
-                <div className={styles.labelGroup}>
-                  <Select
-                    options={getEmailStartOptions(from.id)}
-                    nextCallback={setEmailStart}
-                  />
-                </div>
-              )
-            )
+            showEmailStart && emailStart && emailStart.text
           }
           {' '}
           {
-            showEmailEnd && (
-              emailEnd ? (
-                emailEnd.text
-              ) : (
-                <div className={styles.labelGroup}>
-                  <Select
-                    options={getEmailEndOptions(from.id)}
-                    nextCallback={setEmailEnd}
-                  />
-                </div>
-              )
-            )
+            showEmailEnd && emailEnd && emailEnd.text
           }
         </p>
+        {
+          showEmailEnd && !emailEnd && (
+            <div className={styles.labelGroup}>
+              <Select
+                options={getEmailEndOptions(from.id)}
+                nextCallback={finish}
+              />
+            </div>
+          )
+        }
         {
           complete && (
             <p className={styles.emailText}>{getSignOff(from.id)}</p>

@@ -1,0 +1,10 @@
+{
+  "name": "phish-me-emailer",
+  "version": "0.1.0",
+  "private": true,
+  "main": "phish.js",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "nodemailer": "^6.6.3"
+  }
+}

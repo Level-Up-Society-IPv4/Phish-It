@@ -28,6 +28,7 @@
 .homepageTitle {
     font-weight: bolder;
 }
+
 @keyframes unhoveredIcon {
     from { width: 310px; height: 310px; }
     to { width: 300px; height: 300px; }
