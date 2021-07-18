@@ -1,0 +1,86 @@
+.outterContainer {
+    background-color: #126BB7;
+    height: 500px;
+}
+.dashboardContainer {
+    background-color: #1E96FC;
+    margin: 0% 20% 0% 20%;
+    height: 400px;
+}
+.dbQuizContainer {
+    background-color: #ffff;
+    width: 30%;
+    height: 100%;
+}
+.btn {
+    background-color: #FDC500;
+    color: white;
+    font-size: 2rem;
+    box-shadow: 0 0px 0.3rem var(--primary-dark);
+    min-width: 150px;
+}
+.progressBar {
+    background-color: white;
+    width: 100%;
+    display: flex;
+}
+.exp {
+    margin-left: 43%;
+}
+.player {
+    padding: 20px;
+    color: white;
+    font-size: 1rem;
+    box-shadow: 0 0px 0.3rem var(--primary-dark);
+}
+.dbEmails {
+    position: absolute;
+    left: 39%;
+}
+.dbStats {
+
+}
+.playerIcon {
+    width: 50px;
+    height: 50px;
+    padding: 5px 5px 5px 5px;
+    margin-top: 27%;
+    box-shadow: 0 0px 0.3rem var(--primary-dark);
+}
+.dbPlayer {
+    display:flex;
+    flex-wrap: wrap;
+    box-shadow: 0 0px 0.3rem var(--primary-dark);
+    width: 100%;
+}
+.inlines {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: white;
+    padding-right: 5%;
+    padding-left: 5%;
+    max-height: 50px;
+}
+.pbc {
+     box-shadow: 0 0px 0.3rem var(--primary-dark);
+     background-color: gray;
+     height: 20px;
+     width: 100%;
+     /* margin: 5px 10px -10px 3px; */
+}
+.pbg {
+    /* box-shadow: 0 0px 0.3rem var(--primary-dark); */
+    background: linear-gradient(270deg, #1e5d4d, #1d963c, #5fdd7f);
+    height: 20px;
+    width: 40%;
+    position: fixed;
+    animation: barCycle 14s ease infinite;
+    /* margin: 5px 10px -10px 3px; */
+}
+
+@keyframes barCycle {
+    0% {background-position:0% 50%};
+    50% {background-position:100% 50%};
+    100% {background-position:0% 50%};
+}
