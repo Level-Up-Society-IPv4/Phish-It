@@ -1,7 +1,7 @@
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import { Home } from "./home/Home";
 import { Quiz } from "./quiz/Quiz";
-import { Login } from "./login/Login";
+import { Dashboard } from "./dashboard/Dashboard";
 
 export const App = () => (
   <BrowserRouter>
@@ -14,8 +14,8 @@ export const App = () => (
         <Route path="/quiz">
           <Quiz />
         </Route>
-        <Route path="/login">
-          <Login />
+        <Route path="/dashboard">
+          <Dashboard />
         </Route>
         <Route path="/">
           <Home />
